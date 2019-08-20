@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "RigidBody",
+"class": "RaycastVehicleBody",
+"language": "GDScript",
+"path": "res://addons/raycast_vehicle/RaycastVehicleBody.gd"
+}, {
+"base": "Spatial",
+"class": "RaycastVehicleWheel",
+"language": "GDScript",
+"path": "res://addons/raycast_vehicle/RaycastVehicleWheel.gd"
+}, {
+"base": "EditorSpatialGizmoPlugin",
+"class": "RaycastVehicleWheelGizmoPlugin",
+"language": "GDScript",
+"path": "res://addons/raycast_vehicle/RacastVehicleWheelGizmoPlugin.gd"
+} ]
+_global_script_class_icons={
+"RaycastVehicleBody": "res://addons/raycast_vehicle/icons/icon_vehicle_body.svg",
+"RaycastVehicleWheel": "res://addons/raycast_vehicle/icons/icon_vehicle_wheel.svg",
+"RaycastVehicleWheelGizmoPlugin": ""
+}
+
+[application]
+
+config/name="GodotRaycastVehicle"
+run/main_scene="res://example/example.tscn"
+config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "raycast_vehicle" )
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
